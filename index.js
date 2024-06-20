@@ -4,6 +4,7 @@
 // installo nodemon e modifico script dentro package.json
 // npm i nodemon --save-dev
 // "start": "nodemon index.js"
+// sul terminale lancio npm start
 
 const express = require('express')
 const app = express()
