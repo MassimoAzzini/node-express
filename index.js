@@ -8,20 +8,22 @@
 const express = require('express')
 const app = express()
 
+app.use(express.static('public'));
+
 app.get('/', (req, res)=>{
-  res.send('Hello World')
+  res.sendFile('homepage.html', {root: __dirname + '/public'});
 })
 
 app.get('/about', (req, res)=>{
-  res.send('<h1>Pagina About</h1>')
+  res.sendFile('about.html', {root: __dirname + '/public'});
 })
 
 app.get('/contatti', (req, res)=>{
-  res.send('<h1>Pagina Contatti</h1>')
+  res.sendFile('contatti.html', {root: __dirname + '/public'});
 })
 
 app.all('*', (req, res)=>{
-  res.send('<h1>Risorsa non trovata</h1>')
+  res.sendFile('404.html', {root: __dirname + '/public'});
 })
 
 app.listen(3000)
